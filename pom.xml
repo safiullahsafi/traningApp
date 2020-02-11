@@ -14,6 +14,18 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
+        <distributionManagement>
+             <repository>
+               <id>nexus</id>
+               <name>Releases</name>
+               <url>http://localhost:8081/repository/maven-releases</url>
+             </repository>
+             <snapshotRepository>
+               <id>nexus</id>
+               <name>Snapshot</name>
+               <url>http://localhost:8081/repository/maven-snapshots</url>
+             </snapshotRepository>
+        </distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -75,20 +87,17 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-scm-plugin</artifactId>
-				<version>1.10.0</version>
-				<configuration>
-					<goals>install</goals>
-				</configuration>
-			</plugin>
+                         <groupId>org.sonarsource.scanner.maven</groupId>
+                         <artifactId>sonar-maven-plugin</artifactId>
+                         <version>3.4.0.905</version>
+		        </plugin>
 		</plugins>
 	</build>
 
-	<scm>
+	<!-- <scm>
 		<connection>scm:git:https://github.com/safiullahsafi/traningApp.git</connection>
 		<developerConnection>scm:git:https://github.com/safiullahsafi/traningApp.git</developerConnection>
 		<url>https://github.com/safiullahsafi/traningApp</url>
 		<tag>master</tag>
-	</scm>
+	</scm> -->
 </project>
