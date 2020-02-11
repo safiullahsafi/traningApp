@@ -2,13 +2,12 @@ node {
    def mvnHome
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/walidsaad/training-app-gk.git'
+      git 'https://github.com/safiullahsafi/traningApp.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
       maven3 = tool 'maven3'
       java13 = tool 'java13'
-​
    }
         
    stage('Build') {
